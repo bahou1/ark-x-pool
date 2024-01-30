@@ -1,0 +1,27 @@
+const arr = [-5, 7, 9, 3, 5, 9, 15, 10, 0];
+console.log(arr);
+
+const selectionSort = arr => {
+    const len = arr.length;
+
+    for (let i = 0; i < len; i++) {
+        let indexmin = i;
+
+        for (let j = i + 1; j < len; j++) {
+            if (arr[j] < arr[indexmin]) {
+                indexmin = j;
+            }
+        }
+
+        if (indexmin !== i) {
+            const temp = arr[indexmin];
+            arr[indexmin] = arr[i];
+            arr[i] = temp;
+        }
+    }
+
+    return arr;
+};
+
+selectionSort(arr);
+console.log(arr);

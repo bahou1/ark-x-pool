@@ -1,0 +1,26 @@
+function maskify (input)
+{
+  let hidden = ""
+  let str1 = ""
+  let all =""
+  let stringlength = input.length
+  if (stringlength <= 4)
+  {
+    return input
+  }
+  else
+  {
+    for (let i = 0; i < stringlength - 4; i++)
+    {
+      hidden += "#"
+    }
+    for (let j = stringlength - 4; j < stringlength; j++)
+    {
+      str1 += input[j]
+    }
+    all = str1 + hidden
+    return all
+  }
+}
+
+console.log(maskify('3847137414°9344734'));
